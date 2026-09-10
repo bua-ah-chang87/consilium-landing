@@ -698,6 +698,45 @@
       white-space: nowrap;
     }
 
+    .pricing-upcoming-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--mist);
+      color: var(--sub);
+      border: 1px solid var(--border);
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.25rem 1rem;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .pricing-group {
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--sub);
+      margin: 0.35rem 0 -0.1rem;
+    }
+
+    .pricing-group.later { margin-top: 1rem; }
+
+    .pricing-features li.pending { color: var(--sub); }
+
+    .pricing-pending-mark { color: var(--sub); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+    .pricing-footnote {
+      font-size: 0.72rem;
+      line-height: 1.6;
+      color: var(--sub);
+      margin: -0.5rem 0 1.5rem;
+    }
+
     .pricing-tier {
       font-size: 0.72rem;
       font-weight: 700;
@@ -997,7 +1036,7 @@
           <div class="hero-proof-divider"></div>
           <div class="hero-proof-item">
             <div class="hero-proof-num">4</div>
-            <div class="hero-proof-label">Practice modules<br/>in one platform</div>
+            <div class="hero-proof-label">Practice modules in the<br/>platform — one available today</div>
           </div>
           <div class="hero-proof-divider"></div>
           <div class="hero-proof-item">
@@ -1218,7 +1257,7 @@
       <div class="reveal">
         <div class="section-label">Pricing</div>
         <h2 class="section-h2">Simple, transparent pricing.</h2>
-        <p class="section-sub">Straightforward pricing for practices of all sizes — no setup fees, no lock-in contracts.</p>
+        <p class="section-sub">Straightforward pricing for practices of all sizes, with no setup fees. The Starter plan is available to subscribe today.</p>
       </div>
 
       <div style="
@@ -1265,46 +1304,55 @@
 
         <!-- PRACTICE (featured) -->
         <div class="pricing-card featured reveal" style="transition-delay:0.1s">
-          <div class="pricing-featured-badge">Most Popular</div>
+          <div class="pricing-upcoming-badge">Upcoming plan</div>
           <div class="pricing-tier">Practice</div>
           <div class="pricing-price">
             <span class="pricing-currency">A$</span>
             <span class="pricing-amount">499</span>
             <span class="pricing-period">/month</span>
           </div>
-          <p class="pricing-note">All four modules. Built for growing advice practices.</p>
+          <p class="pricing-note">For practices that want the full platform as modules are released. Not yet open for subscription.</p>
           <ul class="pricing-features">
+            <li class="pricing-group">Available today</li>
             <li><span class="pricing-check">✓</span> Everything in Starter</li>
-            <li><span class="pricing-check">✓</span> Compliance Hub <em style="color:var(--sub);font-style:normal;">— coming soon</em></li>
-            <li><span class="pricing-check">✓</span> Practice Finance <em style="color:var(--sub);font-style:normal;">— coming soon</em></li>
-            <li><span class="pricing-check">✓</span> Practice Operations <em style="color:var(--sub);font-style:normal;">— coming soon</em></li>
             <li><span class="pricing-check">✓</span> Priority support</li>
             <li><span class="pricing-check">✓</span> Onboarding included</li>
+            <li class="pricing-group later">In development — not yet available</li>
+            <li class="pending"><span class="pricing-pending-mark">○</span> Compliance Hub</li>
+            <li class="pending"><span class="pricing-pending-mark">○</span> Practice Finance</li>
+            <li class="pending"><span class="pricing-pending-mark">○</span> Practice Operations</li>
           </ul>
+          <p class="pricing-footnote">These three modules are not yet available in the platform. Access arrangements for them are confirmed with you on your discovery call, before you subscribe.</p>
           <a href="https://calendly.com/ratu-mara-consiliumsystems/30min" target="_blank" rel="noopener" class="btn-gold-solid">
-            Book a Discovery Call
+            Register Interest
           </a>
         </div>
 
-        <!-- UNLIMITED -->
+        <!-- FOUNDING PARTNER (was: UNLIMITED) -->
         <div class="pricing-card reveal" style="transition-delay:0.2s;border-color:var(--blue);box-shadow:0 0 0 1px rgba(26,86,219,0.2),0 20px 50px rgba(11,31,58,0.08);">
-          <div class="pricing-tier">Unlimited</div>
+          <div class="pricing-upcoming-badge">Upcoming plan</div>
+          <div class="pricing-tier">Founding Partner</div>
           <div class="pricing-price">
             <span class="pricing-currency">A$</span>
             <span class="pricing-amount">699</span>
             <span class="pricing-period">/month</span>
           </div>
-          <p class="pricing-note">All four modules plus a founding partner relationship.</p>
+          <p class="pricing-note">For practices that want a founding partner relationship. Not yet open for subscription.</p>
           <ul class="pricing-features">
-            <li><span class="pricing-check">✓</span> Everything in Practice</li>
+            <li class="pricing-group">Available today</li>
+            <li><span class="pricing-check">✓</span> Everything in Starter</li>
             <li><span class="pricing-check">✓</span> Monthly check-in call</li>
             <li><span class="pricing-check">✓</span> Direct input on product roadmap</li>
-            <li><span class="pricing-check">✓</span> First access to new modules</li>
-            <li><span class="pricing-check">✓</span> Founding member pricing lock</li>
+            <li><span class="pricing-check">✓</span> Priority support</li>
             <li><span class="pricing-check">✓</span> Onboarding included</li>
+            <li class="pricing-group later">In development — not yet available</li>
+            <li class="pending"><span class="pricing-pending-mark">○</span> Compliance Hub</li>
+            <li class="pending"><span class="pricing-pending-mark">○</span> Practice Finance</li>
+            <li class="pending"><span class="pricing-pending-mark">○</span> Practice Operations</li>
           </ul>
+          <p class="pricing-footnote">These three modules are not yet available in the platform. Access arrangements for them are confirmed with you on your discovery call, before you subscribe.</p>
           <a href="https://calendly.com/ratu-mara-consiliumsystems/30min" target="_blank" rel="noopener" class="btn-navy-solid">
-            Let's Talk
+            Register Interest
           </a>
         </div>
 
@@ -1327,7 +1375,7 @@
           View Pricing
         </a>
       </div>
-      <p class="cta-footnote">No lock-in contracts. Onboarding included with every plan.</p>
+      <p class="cta-footnote">Onboarding included with every plan.</p>
     </div>
   </section>
 
