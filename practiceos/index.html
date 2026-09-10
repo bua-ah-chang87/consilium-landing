@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Scriba — AI-Powered Practice Management for Financial Planners</title>
-  <meta name="description" content="Scriba helps Australian financial planners draft SOAs in a fraction of the time. Built for compliance, designed for efficiency." />
+  <title>Scriba — AI-Assisted SOA Drafting for Australian Financial Advisers</title>
+  <meta name="description" content="Scriba turns client meeting notes and fact-find information into structured SOA drafts for adviser review. Software for Australian financial advice practices." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
@@ -255,6 +255,21 @@
       border-color: rgba(255,255,255,0.5);
       color: var(--white);
       transform: translateY(-2px);
+    }
+
+    .hero-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      margin-top: 1.75rem;
+      padding: 0.85rem 1.1rem;
+      background: rgba(201,168,76,0.08);
+      border: 1px solid rgba(201,168,76,0.28);
+      border-radius: 8px;
+      max-width: 520px;
+      font-size: 0.84rem;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.78);
     }
 
     .hero-proof {
@@ -578,12 +593,80 @@
       border-top: 1px solid var(--border);
     }
 
+    .facts-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .fact-card {
+      padding: 2rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+    }
+
+    .fact-card h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: var(--navy);
+      margin-bottom: 0.9rem;
+    }
+
+    .fact-card p {
+      font-size: 0.92rem;
+      line-height: 1.75;
+      color: var(--sub);
+      margin-bottom: 0.85rem;
+    }
+
+    .fact-card ul {
+      list-style: none;
+      margin-bottom: 0.85rem;
+    }
+
+    .fact-card ul li {
+      position: relative;
+      padding-left: 1.15rem;
+      margin-bottom: 0.6rem;
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: var(--sub);
+    }
+
+    .fact-card ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.62rem;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    .fact-card a {
+      color: var(--blue);
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .fact-card p:last-child { margin-bottom: 0; }
+
     .pricing-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1.5rem;
       margin-top: 3rem;
       max-width: 800px;
+    }
+
+    .pricing-grid.cols-3 {
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 960px;
     }
 
     .pricing-card {
@@ -854,7 +937,8 @@
       .problem-inner { grid-template-columns: 1fr; gap: 1.25rem; }
       .modules-grid { grid-template-columns: 1fr; }
       .steps-grid { grid-template-columns: 1fr; }
-      .pricing-grid { grid-template-columns: 1fr; max-width: 420px; }
+      .facts-grid { grid-template-columns: 1fr; }
+      .pricing-grid, .pricing-grid.cols-3 { grid-template-columns: 1fr; max-width: 420px; }
       .section { padding: 4rem 1.5rem; }
       .section-h2 { font-size: 1.9rem; }
       footer { flex-direction: column; gap: 1.25rem; text-align: center; }
@@ -888,10 +972,10 @@
     <div class="hero-inner">
       <div class="hero-left">
         <h1 class="hero-h1">
-          Spend Less Time Drafting.<br /><em>More Time Advising.</em>
+          Less SOA drafting.<br /><em>More time advising.</em>
         </h1>
         <p class="hero-sub">
-          Scriba gives financial planning practices an automated back office — Virtual Paraplanner, Compliance Hub, Practice Finance, and Practice Operations in one platform.
+          Turn client meeting notes and fact-find information into structured SOA drafts for adviser review. Scriba brings drafting, compliance tracking, practice finance and operations into one platform built for Australian financial advice practices. The Virtual Paraplanner is available now — Compliance Hub, Practice Finance and Practice Operations are coming soon.
         </p>
         <div class="hero-actions">
           <a href="https://calendly.com/ratu-mara-consiliumsystems/30min" target="_blank" rel="noopener" class="btn-gold">
@@ -901,10 +985,14 @@
             View Pricing
           </a>
         </div>
+        <p class="hero-note">
+          <span aria-hidden="true">⚠️</span>
+          <span>AI-generated drafts require review by a qualified adviser before client use.</span>
+        </p>
         <div class="hero-proof">
           <div class="hero-proof-item">
-            <div class="hero-proof-num">All</div>
-            <div class="hero-proof-label">Mandatory SOA sections,<br/>AFSL-aligned</div>
+            <div class="hero-proof-num">6</div>
+            <div class="hero-proof-label">SOA sections drafted<br/>from your client data</div>
           </div>
           <div class="hero-proof-divider"></div>
           <div class="hero-proof-item">
@@ -914,7 +1002,7 @@
           <div class="hero-proof-divider"></div>
           <div class="hero-proof-item">
             <div class="hero-proof-num">AU</div>
-            <div class="hero-proof-label">Purpose-built for<br/>Australian advisers</div>
+            <div class="hero-proof-label">Built around Australian<br/>advice practice workflows</div>
           </div>
         </div>
       </div>
@@ -973,15 +1061,15 @@
       <div class="problem-item reveal">
         <div class="problem-icon">⏱️</div>
         <div class="problem-text">
-          <strong>SOAs take too long</strong>
-          <p>Manual SOA drafting costs advisers hours per client, time that doesn't scale.</p>
+          <strong>SOA drafting takes time</strong>
+          <p>Drafting a Statement of Advice by hand can take valuable time away from client work.</p>
         </div>
       </div>
       <div class="problem-item reveal" style="transition-delay:0.1s">
         <div class="problem-icon">⚠️</div>
         <div class="problem-text">
-          <strong>Compliance risk is constant</strong>
-          <p>AFSL obligations, Best Interests Duty, and RG175 requirements demand precision on every document.</p>
+          <strong>Obligations are easy to lose track of</strong>
+          <p>Disclosure dates, fee consent renewals and review cycles have to be tracked across every client file.</p>
         </div>
       </div>
       <div class="problem-item reveal" style="transition-delay:0.2s">
@@ -1000,53 +1088,53 @@
       <div class="reveal">
         <div class="section-label">What's inside</div>
         <h2 class="section-h2">Four modules.<br/>One platform.</h2>
-        <p class="section-sub">Each module is purpose-built for Australian financial planning practices, and they're designed to work together.</p>
+        <p class="section-sub">Each module is built around the workflows of Australian financial advice practices. The Virtual Paraplanner is available to subscribers now; Compliance Hub, Practice Finance and Practice Operations are marked coming soon and are not yet accessible in the platform.</p>
       </div>
 
       <div class="modules-grid">
         <div class="module-card featured reveal">
           <div class="module-icon" style="background:#EBF2FF;">📄</div>
-          <div class="module-badge">⭐ Flagship Module</div>
+          <div class="module-badge">⭐ Flagship Module · Available now</div>
           <div class="module-name">Virtual Paraplanner</div>
-          <p class="module-desc">Enter client data once. Generate all mandatory SOA sections, including Executive Summary, Fact Find, Risk Profile, Strategy Comparison, Recommendations, and Compliance Notes, compliantly drafted and ready for adviser review.</p>
+          <p class="module-desc">Supply client information once, then generate structured drafts of the six sections in the Scriba SOA template — Executive Summary, Fact Find Summary, Risk Profile, Strategy Comparison, Recommendations, and Compliance &amp; Disclosure — ready for adviser review and editing.</p>
           <ul class="module-features">
-            <li>AI drafts all mandatory SOA sections simultaneously</li>
-            <li>Smart data extraction from meeting notes or PDF</li>
-            <li>Built-in compliance check against AFSL obligations</li>
-            <li>Export to Word or PDF instantly</li>
+            <li>One click drafts all six SOA sections in sequence</li>
+            <li>Data extraction from pasted meeting notes or an uploaded fact-find PDF</li>
+            <li>AI compliance check that reviews your draft against a fixed 14-point checklist and flags gaps for your attention</li>
+            <li>Export to Word (.docx), or print to PDF</li>
             <li>Version history with one-click restore</li>
           </ul>
         </div>
 
         <div class="module-card reveal" style="transition-delay:0.1s">
           <div class="module-icon" style="background:#ECFDF5;">⚖️</div>
-          <div class="module-badge">Compliance</div>
+          <div class="module-badge">Compliance · Coming soon</div>
           <div class="module-name">Compliance Hub</div>
-          <p class="module-desc">Monitor AFSL obligations across your entire client base. Track FDS dates, fee consent, Best Interests Duty status, and review schedules in one place.</p>
+          <p class="module-desc">Track compliance tasks and upcoming deadlines across your client book. Record the dates and statuses your practice already monitors, and see at a glance what is due soon and what is overdue.</p>
           <ul class="module-features">
-            <li>Client-level compliance status dashboard</li>
-            <li>FDS and fee consent deadline tracking</li>
-            <li>BID and licensee obligation monitoring</li>
-            <li>Automated overdue and upcoming alerts</li>
+            <li>Client-level status dashboard: done, due within 30 days, overdue</li>
+            <li>Fee Disclosure Statement and fee consent date tracking</li>
+            <li>Best Interests Duty and licensee status recorded per client</li>
+            <li>Email alerts when a client becomes due soon or overdue</li>
           </ul>
         </div>
 
         <div class="module-card reveal" style="transition-delay:0.15s">
           <div class="module-icon" style="background:#FFF7ED;">💰</div>
-          <div class="module-badge">Financial</div>
+          <div class="module-badge">Financial · Coming soon</div>
           <div class="module-name">Practice Finance</div>
-          <p class="module-desc">Understand your practice's financial health. Cash flow modelling, revenue per client, margin analysis, and pricing benchmarks tailored to advice practices.</p>
+          <p class="module-desc">See your practice's financial position from figures you enter. Revenue and cost snapshots, margin, revenue per client and a pricing health score, with an AI summary for adviser review.</p>
           <ul class="module-features">
             <li>Monthly revenue and cost snapshot</li>
-            <li>Profit margin and pricing score</li>
-            <li>Revenue per client benchmarking</li>
-            <li>Hourly rate and capacity analysis</li>
+            <li>Profit margin and a 0–100 pricing health score</li>
+            <li>Revenue per client and average ongoing fee metrics</li>
+            <li>Effective hourly rate analysis</li>
           </ul>
         </div>
 
         <div class="module-card reveal" style="transition-delay:0.2s">
           <div class="module-icon" style="background:#F5F3FF;">🏢</div>
-          <div class="module-badge">Operations</div>
+          <div class="module-badge">Operations · Coming soon</div>
           <div class="module-name">Practice Operations</div>
           <p class="module-desc">Keep client review cycles on track and your team's capacity visible. Track workflow status across your book and surface bottlenecks before they become problems.</p>
           <ul class="module-features">
@@ -1070,18 +1158,55 @@
       <div class="steps-grid">
         <div class="step-card reveal">
           <div class="step-num">01</div>
-          <div class="step-title">Enter client data</div>
-          <p class="step-desc">Paste raw meeting notes, upload a fact-find PDF, or fill in fields manually. Scriba extracts and structures the data automatically.</p>
+          <div class="step-title">Supply client information</div>
+          <p class="step-desc">Paste raw meeting notes, upload a fact-find PDF, or fill in the fields manually. Scriba extracts what it can find into structured fields for you to check and correct.</p>
         </div>
         <div class="step-card reveal" style="transition-delay:0.1s">
           <div class="step-num">02</div>
-          <div class="step-title">Generate your SOA</div>
-          <p class="step-desc">One click drafts all mandatory SOA sections simultaneously, with Australian regulatory standards built in and ready for adviser review.</p>
+          <div class="step-title">Generate a structured draft</div>
+          <p class="step-desc">One click drafts the six sections of the Scriba SOA template in sequence, from the information you supplied, ready for adviser review.</p>
         </div>
         <div class="step-card reveal" style="transition-delay:0.2s">
           <div class="step-num">03</div>
-          <div class="step-title">Review, check, export</div>
-          <p class="step-desc">Run an automated compliance check against AFSL obligations and Best Interests Duty. Edit any section, save versions, then export to Word or PDF.</p>
+          <div class="step-title">Review, edit, export</div>
+          <p class="step-desc">Edit any section directly and save a version you can restore later. Run the AI compliance check to surface possible gaps and inconsistencies for your attention, then export to Word or print to PDF.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW SCRIBA FITS IN / CLIENT DATA -->
+  <section class="section" id="data-and-privacy" style="background:var(--mist);border-top:1px solid var(--border);">
+    <div class="section-inner">
+      <div class="reveal">
+        <div class="section-label">Before you start</div>
+        <h2 class="section-h2">How Scriba fits<br/>into your practice.</h2>
+      </div>
+
+      <div class="facts-grid">
+        <div class="fact-card reveal">
+          <h3>Scriba runs on its own</h3>
+          <p>Scriba is a standalone platform. It does not read from, or write to, your CRM, planning software or any other practice system, and nothing you enter is automatically synchronised with them.</p>
+          <p>What that means in practice:</p>
+          <ul>
+            <li><strong>Information in:</strong> paste meeting notes, upload a fact-find PDF, or type into the fields directly.</li>
+            <li><strong>Work out:</strong> export a draft to Word (.docx), or print it to PDF.</li>
+            <li><strong>Inside Scriba:</strong> drafts are saved as versions you can restore, and each module holds the information you enter into it.</li>
+          </ul>
+          <p>If your workflow depends on data flowing automatically between Scriba and another system, please raise it on a discovery call before subscribing.</p>
+        </div>
+
+        <div class="fact-card reveal" style="transition-delay:0.1s">
+          <h3>Client data and privacy</h3>
+          <p>A short summary of what our policies say. They are the full and governing statement — please read them before entering client information.</p>
+          <ul>
+            <li><strong>AI provider:</strong> Scriba uses Anthropic's Claude API. The information you enter is sent to that API to generate drafts, compliance findings and extracted data.</li>
+            <li><strong>Model training:</strong> our policies state that your inputs are not used by Consilium Systems or Anthropic to train AI models without your explicit consent.</li>
+            <li><strong>Storage and location:</strong> data is stored using Supabase, with hosting on Vercel. Our Privacy Policy states that these providers may store or process data outside Australia, and that you consent to that overseas disclosure by using Scriba.</li>
+            <li><strong>Access and retention:</strong> the Privacy Policy describes row-level security so users access only their own data, encryption in transit and at rest, and deletion or de-identification of personal information within a reasonable timeframe after an account is closed.</li>
+            <li><strong>Sensitive information:</strong> both policies ask you not to enter sensitive personal information beyond what is reasonably necessary for the output you are producing.</li>
+          </ul>
+          <p>Read the full <a href="https://scriba.consiliumsystems.com.au/privacy" target="_blank" rel="noopener">Privacy Policy</a>, <a href="https://scriba.consiliumsystems.com.au/ai-usage-policy" target="_blank" rel="noopener">AI Usage Policy</a> and <a href="https://scriba.consiliumsystems.com.au/terms" target="_blank" rel="noopener">Terms of Service</a>. You remain responsible for handling client information in line with your own privacy and AFSL obligations.</p>
         </div>
       </div>
     </div>
@@ -1114,7 +1239,7 @@
         </div>
       </div>
 
-      <div class="pricing-grid" style="grid-template-columns:repeat(3,1fr);max-width:960px;">
+      <div class="pricing-grid cols-3">
 
         <!-- STARTER -->
         <div class="pricing-card reveal">
@@ -1127,8 +1252,8 @@
           <p class="pricing-note">Virtual Paraplanner access. Ideal for sole operator advisers.</p>
           <ul class="pricing-features">
             <li><span class="pricing-check">✓</span> Virtual Paraplanner, full access</li>
-            <li><span class="pricing-check">✓</span> All mandatory SOA sections</li>
-            <li><span class="pricing-check">✓</span> Compliance check tool</li>
+            <li><span class="pricing-check">✓</span> All six sections of the Scriba SOA template</li>
+            <li><span class="pricing-check">✓</span> AI compliance check tool</li>
             <li><span class="pricing-check">✓</span> Word and PDF export</li>
             <li><span class="pricing-check">✓</span> Version history</li>
             <li><span class="pricing-check">✓</span> Onboarding included</li>
@@ -1150,9 +1275,9 @@
           <p class="pricing-note">All four modules. Built for growing advice practices.</p>
           <ul class="pricing-features">
             <li><span class="pricing-check">✓</span> Everything in Starter</li>
-            <li><span class="pricing-check">✓</span> Compliance Hub</li>
-            <li><span class="pricing-check">✓</span> Practice Finance</li>
-            <li><span class="pricing-check">✓</span> Practice Operations</li>
+            <li><span class="pricing-check">✓</span> Compliance Hub <em style="color:var(--sub);font-style:normal;">— coming soon</em></li>
+            <li><span class="pricing-check">✓</span> Practice Finance <em style="color:var(--sub);font-style:normal;">— coming soon</em></li>
+            <li><span class="pricing-check">✓</span> Practice Operations <em style="color:var(--sub);font-style:normal;">— coming soon</em></li>
             <li><span class="pricing-check">✓</span> Priority support</li>
             <li><span class="pricing-check">✓</span> Onboarding included</li>
           </ul>
@@ -1216,7 +1341,7 @@
     <div class="footer-right">
       ABN 94 655 810 737 · <a href="https://consiliumsystems.com.au" target="_blank">consiliumsystems.com.au</a><br/>
       <a href="https://scriba.consiliumsystems.com.au/privacy" target="_blank">Privacy Policy</a> · <a href="https://scriba.consiliumsystems.com.au/terms" target="_blank">Terms of Service</a><br/>
-      <span style="color:rgba(255,255,255,0.12);">For use by licensed financial advisers only. AI-generated content requires adviser review before client use.</span>
+      <span style="color:rgba(255,255,255,0.55);">For use by licensed financial advisers only. AI-generated drafts require review by a qualified adviser before client use. Scriba does not certify compliance or confirm that Best Interests Duty has been satisfied, and does not replace your licensee's review.</span>
     </div>
   </footer>
 
